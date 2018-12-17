@@ -6,7 +6,7 @@
 #+LATEX_HEADER: \usepackage[onehalfspacing]{setspace}
 #+LATEX_HEADER: \input{ext/authors}
 \onecolumn
-\title[Running Title]{Article Title} 
+\title[Our Running Title]{Our Great Article Title} 
 # these fields  will be automatically populated:
 \author[\firstAuthorLast ]{\Authors} 
 \address{}
@@ -27,7 +27,7 @@ Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis 
 
 #+END_EXPORT
 
-* TODO Introduction
+* Introduction
 
 The hardware that drives EEG-based BCIs has improved dramatically over the past
 five years, decreasing in size and cost by orders of magnitude
@@ -37,7 +37,7 @@ from 100 to 500 USD, and featuring one to sixteen electrodes. Many of them
 transmit data wirelessly to computers and smart devices. Meanwhile, advances in
 machine learning have radically improved the reliability of BCI applications.
 Taken together, prospects seem bright for the wider adoption of BCIs in everyday
-life.
+life. 
 
 However, the head-worn form-factor, and awkward visibility of EEG-based BCIs has
 proven a stubborn challenge to BCI adoption \cite{mihajlovic_wearable_2014}.
@@ -56,23 +56,26 @@ affordances. For example, one study built a rudimentary eye-tracker using
 muscular signals (EMG, or electromyography) collected from the ear canal
 \cite{manabe_conductive_2015}.
 
-_introduce schematically passthoughts as a test-case_
+To test in-ear EEG's capacity to produce usable BCI applications, this paper
+attempts to use the sensing modality to construct a brain-based authentication
+system cite:Chuang2013b using custom-fit, EEG earbuds. This paper makes several,
+distinct contributions. First, we achieve a 99.82\% authentication accuracy with
+zero false acceptance rate (FAR) using personalized custom-fit three-channel EEG
+earpieces and a passthoughts authentication paradigm. Second, we quantify the
+improvements over prior art in authentication accuracy due to the use of
+custom-fit versus generic earpieces, and the use of multiple electrodes versus a
+single electrode. Third, we evaluate multiple classification strategies that
+allows us to compare the relative contributions of the inherence factor and
+knowledge factor to authentication accuracy. Fourth, we perform simulation
+attacks to demonstrate the method's robustness against impersonation via four
+scenarios where the attacker has access to the target's earpiece and/or secret
+passthoughts.
 
-
-# We make several distinct contributions in this work. First, we achieve a
-# 99.82\% authentication accuracy with zero false acceptance rate (FAR) using
-# personalized custom-fit three-channel EEG earpieces and a passthoughts
-# authentication paradigm. Second, we quantify the improvements over prior art
-# in authentication accuracy due to the use of custom-fit versus generic
-# earpieces, and the use of multiple electrodes versus a single electrode.
-# Third, we evaluate multiple classification strategies that allows us to
-# compare the relative contributions of the inherence factor and knowledge
-# factor to authentication accuracy. Fourth, we perform simulation attacks to
-# demonstrate the method's robustness against impersonation via four scenarios
-# where the attacker has access to the target's earpiece and/or secret
-# passthoughts. Collectively, we build a case that passthoughts authentication
-# using personalized custom-fit earpieces offers a viable and attractive path
-# towards one-step three-factor authentication.
+Collectively, we build a case that in-ear EEG could offer a viable, usable road
+to accurate BCI applications, for healthy individuals or persons with
+disabilities. In addition, we argue that passthoughts authentication using
+personalized custom-fit earpieces offers a viable and attractive path towards
+one-step three-factor authentication.
 * Related work
 ** In-Ear EEG
 
