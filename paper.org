@@ -1,36 +1,63 @@
-* TODO Abstract :ARCHIVE:
-* TODO Introduction :ARCHIVE:
+:frontmatter:
+#+options: toc:nil
+#+LaTeX_CLASS: frontiers
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{url,hyperref,lineno,microtype,subcaption}
+#+LATEX_HEADER: \usepackage[onehalfspacing]{setspace}
+#+LATEX_HEADER: \input{ext/authors}
+\onecolumn
+\title[Running Title]{Article Title} 
+# these fields  will be automatically populated:
+\author[\firstAuthorLast ]{\Authors} 
+\address{}
+\correspondance{}
+\maketitle
+:end:
 
-# It is well appreciated by experts and end-users alike that strong authentication is
-# critical to cybersecurity and privacy, now and into the future. Unfortunately,
-# news reports of celebrity account hackings serve as regular reminders that
-# the currently dominant method of authentication in consumer applications, 
-# single-factor authentication using passwords or other user-chosen secrets, 
-# faces many challenges. Many major online services have strongly encouraged 
-# their users to adopt two-factor authentication (2FA). However, submitting two 
-# different authenticators in two separate steps has frustrated wide adoption
-# due to its additional hassle to users. Modern smartphones, for instance,
-# already support device unlock using either a user-selected passcode or a fingerprint. These
-# devices could very well support a two-step two-factor authentication scheme if
-# desired. However, it is easy to understand why users would balk at having to
-# enter a passcode \emph{and} provide a fingerprint each time they want to unlock their phone.
+#+BEGIN_EXPORT latex
+\begin{abstract}
 
-# ``One-step two-factor authentication" has been proposed as a new approach
-# to authentication that can provide the security benefits of two-factor authentication 
-# without incurring the hassle cost of two-step verification \cite{Chuang2014}.
-# In this work we undertake, to the best of our knowledge, the first-ever study and design of 
-# one-step, \textit{three}-factor authentication. In computer security, authenticators are 
-# classified into three types: knowledge factors (e.g., passwords 
-# and PINs), possession factors (e.g., physical tokens, ATM cards), and inherence
-# factors (e.g., fingerprints and other biometrics). By taking advantage of a physical token 
-# in the form of personalized earpieces, the uniqueness of an individual's brainwaves, and
-# a choice of mental task to use as one's ``passthought", we seek to achieve all three factors 
-# of authentication within a single step by the user.
+%%% Leave the Abstract empty if your article does not require one, please see the Summary Table for full details.
+\section{}
+Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
 
-# Furthermore, the form factor of an earpiece combats the flaw of the conspicuous and 
-# obtrusive nature of traditional EEG systems worn on the scalp. Technology worn in the 
-# ear is already a socially accepted practice in many cultures, with examples like 
-# earphones or bluetooth headsets.
+\tiny
+ \keyFont{ \section{Keywords:} keyword, keyword, keyword, keyword, keyword, keyword, keyword, keyword} %All article types: you may provide up to 8 keywords; at least 5 are mandatory.
+\end{abstract}
+
+#+END_EXPORT
+
+* TODO Introduction
+
+The hardware that drives EEG-based BCIs has improved dramatically over the past
+five years, decreasing in size and cost by orders of magnitude
+\cite{grierson_better_2011}. Many consumer devices leverage this technology: as
+of February 2016, there are at least five EEG devices on the market, ranging
+from 100 to 500 USD, and featuring one to sixteen electrodes. Many of them
+transmit data wirelessly to computers and smart devices. Meanwhile, advances in
+machine learning have radically improved the reliability of BCI applications.
+Taken together, prospects seem bright for the wider adoption of BCIs in everyday
+life.
+
+However, the head-worn form-factor, and awkward visibility of EEG-based BCIs has
+proven a stubborn challenge to BCI adoption \cite{mihajlovic_wearable_2014}.
+Both disabled and healthy subjects complain about the comfort of head-worn
+devices, the difficulty of applying electrodes correctly to the scalp, and
+questionable aesthetics of wearing such a visible device in public, social
+settings \cite{ekandem_evaluating_2012, hairston_usability_2014}.
+
+One possible solution to this problem is to embed EEG electrodes in earbuds,
+collecting EEG signals from the ear canal. While early work framed in-ear EEG
+largely as a tradeoff between ergonomics and signal quality
+\cite{kidmose_ear-eeg_2013}, in-ear EEG signals are at least robust enough to
+detect auditory evoked responses \cite{kidmose_auditory_2012}, more recent work
+has indicated that EEG collected in the ear may have its own, unique
+affordances. For example, one study built a rudimentary eye-tracker using
+muscular signals (EMG, or electromyography) collected from the ear canal
+\cite{manabe_conductive_2015}.
+
+_introduce schematically passthoughts as a test-case_
+
 
 # We make several distinct contributions in this work. First, we achieve a
 # 99.82\% authentication accuracy with zero false acceptance rate (FAR) using
@@ -47,17 +74,7 @@
 # using personalized custom-fit earpieces offers a viable and attractive path
 # towards one-step three-factor authentication.
 * Related work
-** Passthoughts and behavioral authentication
-
-The use of EEG as a biometric signal for user authentication has a relatively
-short history. In 2005, Thorpe et al. motivated and outlined the design of a
-passthoughts system \cite{Thorpe2005}. Since 2002, a number of independent
-groups have achieved 99-100\% authentication accuracy for small populations
-using research-grade and consumer-grade scalp-based EEG systems
-\cite{Poulos2002,Marcel2007a,Ashby2011,Chuang2013b}. Several recent works on
-brainwave biometrics have independently demonstrated individuals' EEG permanence
-over one to six months \cite{Armstrong2015,Maiorana2016} or even over one year
-\cite{Ruiz2017}.
+** In-Ear EEG
 
 The concept of in-ear EEG was introduced in 2011 with a demonstration of the
 feasibility of recording brainwave signals from within the ear canal
@@ -70,6 +87,20 @@ but was only able to attain an accuracy level of 80\%, limited by the use of a
 consumer-grade device with a single generic-fit electrode
 \cite{curran2016passthoughts}.
 
+** Passthoughts and behavioral authentication
+
+The use of EEG as a biometric signal for user authentication has a relatively
+short history. In 2005, Thorpe et al. motivated and outlined the design of a
+passthoughts system \cite{Thorpe2005}. Since 2002, a number of independent
+groups have achieved 99-100\% authentication accuracy for small populations
+using research-grade and consumer-grade scalp-based EEG systems
+\cite{Poulos2002,Marcel2007a,Ashby2011,Chuang2013b}. Several recent works on
+brainwave biometrics have independently demonstrated individuals' EEG permanence
+over one to six months \cite{Armstrong2015,Maiorana2016} or even over one year
+\cite{Ruiz2017}.
+
+*** Authentication factors
+
 Behavioral authentication methods such as keystroke dynamics and speaker
 authentication can be categorized as one-step two-factor authentication schemes.
 In both cases, the knowledge factor (password or passphrase) and inherence
@@ -79,6 +110,7 @@ inherence factor (cardiac rhythm that is supposed to be unique to each
 individual) and the possession factor (the wearing of the band on the wrist)
 \cite{Nymi}. However, as far as we know, no one has proposed or demonstrated a
 one-step three-factor authentication scheme.
+
 ** Usable authentication
 
 When proposing or evaluating authentication paradigms, robustness against
@@ -109,6 +141,36 @@ knowledge two-factor method for multi-touch mobile devices based on a user's
 unique finger tapping of a song \cite{Chen2015}, though it may be vulnerable to
 ``shoulder surfing'': imposters observing and mimicking the behavior to gain
 access.
+
+** One-step, three-factor authentication
+
+It is well appreciated by experts and end-users alike that strong authentication
+is critical to cybersecurity and privacy, now and into the future.
+Unfortunately, news reports of celebrity account hackings serve as regular
+reminders that the currently dominant method of authentication in consumer
+applications, single-factor authentication using passwords or other user-chosen
+secrets, faces many challenges. Many major online services have strongly
+encouraged their users to adopt two-factor authentication (2FA). However,
+submitting two different authenticators in two separate steps has frustrated
+wide adoption due to its additional hassle to users. Modern smartphones, for
+instance, already support device unlock using either a user-selected passcode or
+a fingerprint. These devices could very well support a two-step two-factor
+authentication scheme if desired. However, it is easy to understand why users
+would balk at having to enter a passcode \emph{and} provide a fingerprint each
+time they want to unlock their phone.
+
+``One-step two-factor authentication" has been proposed as a new approach to
+authentication that can provide the security benefits of two-factor
+authentication without incurring the hassle cost of two-step verification
+\cite{Chuang2014}. In this work we undertake, to the best of our knowledge,
+the first-ever study and design of one-step, \textit{three}-factor
+authentication. In computer security, authenticators are classified into three
+types: knowledge factors (e.g., passwords and PINs), possession factors (e.g.,
+physical tokens, ATM cards), and inherence factors (e.g., fingerprints and
+other biometrics). By taking advantage of a physical token in the form of
+personalized earpieces, the uniqueness of an individual's brainwaves, and a
+choice of mental task to use as one's ``passthought", we seek to achieve all
+three factors of authentication within a single step by the user.
 
 In the system we propose here we seek to incorporate recommendations from this
 research for improved usability while maintaining a highly secure system. The
@@ -186,6 +248,7 @@ stimuli. The nine authentication tasks and their attributes are listed in Table
 across dimensions of external stimuli, involving a personal secret, eyes open or
 closed (due to known effects on EEG), and different types of mental imagery.
 
+#+BEGIN_EXPORT latex
 \begin{table*}
 \caption{The nine authentication tasks and their properties. We selected tasks with a variety of different properties, but preferred tasks that did not require external stimuli, as the need to present such stimuli at authentication time could present challenges for usability and user security. Tasks were performed with the participant's eyes closed unless otherwise noted.}
 \label{tab:tasks}
@@ -206,6 +269,7 @@ Sequence & Imagine a face, number, and word on cues with eyes open & Yes & Yes &
 \hline
 \end{tabularx}
 \end{table*}
+#+END_EXPORT
 
 ** Data collection protocol
 
@@ -605,11 +669,12 @@ listed in Table \ref{tab:p1_imposter_impedances} below. Across all cases, the
 impedances are not only higher (worse), but also deviate significantly from
 those achieved by the pieces' intended owners themselves (Table
 \ref{tab:impedances}). These results come as no surprise given the uniqueness of
-ear canal shapes between individuals \cite{Akkermans2005}, and point to the
+ear canal shapes between individuals cite:Akkermans2005, and point to the
 possibility that the presentation of a physical token that provides the correct
 impedance levels can be used as another demonstration of both the inherence and
 possession factors.
 
+#+BEGIN_EXPORT latex
 \begin{table}%[h]
 \caption{Electrical impedances with P1 wearing each other participant's (P) custom-fitted earpieces, for concha (C), canal-front (F) and canal-back (B).}
 \label{tab:p1_imposter_impedances}
@@ -630,6 +695,7 @@ possession factors.
 \end{tabular}
 \end{center}
 \end{table}
+#+END_EXPORT
 
 Second, to explore the scenario of an imposter attempting to gain access, we
 chose the case of the most vulnerable participant, P6, whose earpieces P1, P2,
@@ -734,6 +800,7 @@ the most common forms of authentication, alphanumeric passwords, where increased
 complexity ensures better performance. The topic of user perceptions of
 different passthoughts as means of authentication warrants its own research.
 
+
 The difficulty of stealing someone else's knowledge factor emerged in our
 spoofing attacks. In conventional password-based systems, once the knowledge
 factor is divulged, an attacker can essentially spoof the target with 100\%
@@ -777,17 +844,17 @@ with disabilities which may prevent them from performing other authentication
 methods, e.g. those that require the use of one's hands, voice, or particular
 bodily movement patterns.
 
-An important question surrounds how passthoughts might be cracked. Generally, we
-do not understand how an individual's passthought is drawn from the distribution
-of EEG signals an individual produces throughout the day. Given a large enough
-corpus of EEG data, are some passthoughts as easy to guess as
-\textit{password1234} is for passwords? Future work should perform statistical
-analyses on passthoughts, such as clustering (perhaps with t-SNE) to better
-understand the space of possible passthoughts. This work will allow us simulate
-cracking attempts, and to develop empirically motivated strategies for
-prevention, e.g., locking users out after a certain number of attempts. This
-work could also reveal interesting tradeoffs between the usability or accuracy
-of passthoughts and their security.
+# An important question surrounds how passthoughts might be cracked. Generally, we
+# do not understand how an individual's passthought is drawn from the distribution
+# of EEG signals an individual produces throughout the day. Given a large enough
+# corpus of EEG data, are some passthoughts as easy to guess as
+# \textit{password1234} is for passwords? Future work should perform statistical
+# analyses on passthoughts, such as clustering (perhaps with t-SNE) to better
+# understand the space of possible passthoughts. This work will allow us simulate
+# cracking attempts, and to develop empirically motivated strategies for
+# prevention, e.g., locking users out after a certain number of attempts. This
+# work could also reveal interesting tradeoffs between the usability or accuracy
+# of passthoughts and their security.
 
 Applications for a system like the one we propose here span any use case for
 authentication, but some may be particularly well-suited. As has been the
@@ -826,4 +893,52 @@ feedback on the result of their authentication attempt. A closed-loop BCI system
 would assist in understanding how human learning effects might impact
 authentication performance, as the human and machine co-adapt.
 
+* Health, neuroscience & in-ear EEG
+
+Neuroscience fuels some of the most chilling predictions in science fiction
+cite:Welsh2011. It also stands for some of the greatest possible advances in
+medicine, mental health, and understanding of human behavior. One ambitious goal
+is to detect or even predict seizures cite:Mormann2006.
+
+However, the original, and most active areas of research in BCI surround the
+creation of tools for persons with muscular disabilites cite:Carrino2012. By
+collecting unstructured or semi-structured EEG data in the wild, passthought
+systems could help improve the development of such BCIs cite:Grierson2011a. The
+small size of data repositories, limited mostly by the clinical trials needed to
+build BCIs for persons with disabilities, has consistently frustrated attempts
+to improve on algorithms and protocols in this field cite:Allison2009.
+
+Though the application context for passthoughts is quite different from
+wheelchairs, and although passthought users may not have muscular disabilities,
+pursuing passthoughts as an area of research will inevitably yield larger
+repositories of EEG data than have been collected to date. This data could prove
+invaluable for the development of EEG-based BCIs across a variety of fields,
+including (but not limited to) assistive technologies.
+
+Again, these opportunities must strike a balance with the risks of individual
+users' privacy and security. Violating user privacy by revealing EEG data, even
+to researchers, could undermine any chance of wider BCI adoption in the
+long-term. Striking this balance will require a deeper understanding of the
+statistical properties of signals. How much data will users really need to give
+up? What counts as an ``anomalous'' reading? Answers to these questions could
+themselves inform neuroscientific inquiry. This balance will also require a
+deeper understanding of individuals' attitudes about the meaning of such
+signals, and how private people believe them to be.
+# It will also require understanidnand of user attitudes about what these signals might mean.
+# What are people willing to give up, regardless of empirical evidence?
+* Conclusion
+
+In general, as sensors grow smaller and cheaper, devices more connected, and machine learning more sophisticated, 
+people will build increasingly high-resolution models of human physiology ``in the wild.''
+Passthoughts present just a microcosm of the good such advances might bring, 
+along with some of the most pressing anxieties: 
+What does pervasive physiological recording mean for our privacy, security, safety? 
+The balancing act between these risks and opportunities will prove recurring theme for decades to come.
+In the meantime, probing the outer limits of ubiquitous, pervasive sensing can shed light on both the good and bad that our near future may bring.
 * TODO Conclusion :ARCHIVE:
+* Acknowledgements
+
+Withheld for blind review.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
