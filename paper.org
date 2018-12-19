@@ -6,7 +6,7 @@
 #+LATEX_HEADER: \usepackage[onehalfspacing]{setspace}
 #+LATEX_HEADER: \input{ext/authors}
 \onecolumn
-\title[Our Running Title]{Our Great Article Title} 
+\title[One-Step, Three-Factor Passthought Authentication]{One-Step, Three-Factor Passthought Authentication with Custom-Fit, In-Ear EEG} 
 # these fields  will be automatically populated:
 \author[\firstAuthorLast ]{\Authors} 
 \address{}
@@ -19,7 +19,18 @@
 
 %%% Leave the Abstract empty if your article does not require one, please see the Summary Table for full details.
 \section{}
-Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+In-ear EEG offers a promising path toward usable, discreet brain-computer interfaces (BCIs) 
+for both healthy individuals and persons with disabilities.
+To test the promise of this modality,
+we produced a brain-based authentication system 
+using custom-fit EEG earpieces.
+We demonstrated that our system has high accuracy, higher
+than prior work using non-custom earpieces. We demonstrated that both inherence
+and knowledge factors contribute to authentication accuracy, and performed a
+simulated attack to show our system's robustness against impersonation. 
+From an authentication standpoint, our system provides
+three factors of authentication in a single step.
+From a usability standpoint, our system does not require a cumbersome, head-worn device.
 
 \tiny
  \keyFont{ \section{Keywords:} keyword, keyword, keyword, keyword, keyword, keyword, keyword, keyword} %All article types: you may provide up to 8 keywords; at least 5 are mandatory.
@@ -31,8 +42,8 @@ Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis 
 
 The hardware that drives EEG-based BCIs has improved dramatically over the past
 five years, decreasing in size and cost by orders of magnitude
-\cite{grierson_better_2011}. Many consumer devices leverage this technology: as
-of February 2016, there are at least five EEG devices on the market, ranging
+(cite:Grierson2011a). Many consumer devices leverage this technology: as
+of December 2018, there are at least seven EEG devices on the market, ranging
 from 100 to 500 USD, and featuring one to sixteen electrodes. Many of them
 transmit data wirelessly to computers and smart devices. Meanwhile, advances in
 machine learning have radically improved the reliability of BCI applications.
@@ -40,36 +51,46 @@ Taken together, prospects seem bright for the wider adoption of BCIs in everyday
 life. 
 
 However, the head-worn form-factor, and awkward visibility of EEG-based BCIs has
-proven a stubborn challenge to BCI adoption \cite{mihajlovic_wearable_2014}.
+proven a stubborn challenge to BCI adoption (cite:Mihajlovic2015).
 Both disabled and healthy subjects complain about the comfort of head-worn
 devices, the difficulty of applying electrodes correctly to the scalp, and
 questionable aesthetics of wearing such a visible device in public, social
-settings \cite{ekandem_evaluating_2012, hairston_usability_2014}.
+settings (cite:Ekandem2012,DavidHairston2014).
 
 One possible solution to this problem is to embed EEG electrodes in earbuds,
 collecting EEG signals from the ear canal. While early work framed in-ear EEG
-largely as a tradeoff between ergonomics and signal quality
-\cite{kidmose_ear-eeg_2013}, in-ear EEG signals are at least robust enough to
-detect auditory evoked responses \cite{kidmose_auditory_2012}, more recent work
-has indicated that EEG collected in the ear may have its own, unique
-affordances. For example, one study built a rudimentary eye-tracker using
-muscular signals (EMG, or electromyography) collected from the ear canal
-\cite{manabe_conductive_2015}.
+largely as a tradeoff between ergonomics and signal quality (cite:Kidmose2013a),
+in-ear EEG signals are at least robust enough to detect auditory evoked
+responses (cite:Kidmose2012), and more recent work has indicated that EEG
+collected in the ear may have its own, unique affordances. For example, one
+study built a rudimentary eye-tracker using muscular signals (EMG, or
+electromyography) collected from the ear canal (cite:Manabe2013).
 
 To test in-ear EEG's capacity to produce usable BCI applications, this paper
 attempts to use the sensing modality to construct a brain-based authentication
-system cite:Chuang2013b using custom-fit, EEG earbuds. This paper makes several,
-distinct contributions. First, we achieve a 99.82\% authentication accuracy with
-zero false acceptance rate (FAR) using personalized custom-fit three-channel EEG
-earpieces and a passthoughts authentication paradigm. Second, we quantify the
-improvements over prior art in authentication accuracy due to the use of
-custom-fit versus generic earpieces, and the use of multiple electrodes versus a
-single electrode. Third, we evaluate multiple classification strategies that
-allows us to compare the relative contributions of the inherence factor and
-knowledge factor to authentication accuracy. Fourth, we perform simulation
-attacks to demonstrate the method's robustness against impersonation via four
-scenarios where the attacker has access to the target's earpiece and/or secret
-passthoughts.
+system (cite:Chuang2013b) using custom-fit, EEG earbuds. Authentication relies on
+one or more /factors/: knowledge (something one knows), posesssion (something
+one has), or inherence (properties of one's body). Where multifactor
+authentication provides added security over single-factor authentication such as
+passwords, multiple factors typically require multiple steps (e.g., entering a
+password, then entering a code from one's cellphone). Brain-based authentication
+combines multiple factors of authentication into a single step: a knowledge
+factor (one's secret thought), and a biometric factor (the unique way one
+express that thought neurally) (cite:Chuang2014). By incorporating a custom-fit
+earbud, we set otu to combine all three factors of authentication into a single
+step.
+
+This paper makes several, distinct contributions. First, we achieve a 99.82%
+authentication accuracy with zero false acceptance rate (FAR) using personalized
+custom-fit three-channel EEG earpieces and a passthoughts authentication
+paradigm. Second, we quantify the improvements over prior art in authentication
+accuracy due to the use of custom-fit versus generic earpieces, and the use of
+multiple electrodes versus a single electrode. Third, we evaluate multiple
+classification strategies that allows us to compare the relative contributions
+of the inherence factor and knowledge factor to authentication accuracy. Fourth,
+we perform simulation attacks to demonstrate the method's robustness against
+impersonation via four scenarios where the attacker has access to the target's
+earpiece and/or secret passthoughts.
 
 Collectively, we build a case that in-ear EEG could offer a viable, usable road
 to accurate BCI applications, for healthy individuals or persons with
@@ -81,37 +102,37 @@ one-step three-factor authentication.
 
 The concept of in-ear EEG was introduced in 2011 with a demonstration of the
 feasibility of recording brainwave signals from within the ear canal
-\cite{Looney2011}. The in-ear placement can produce signal-to-noise ratios
+cite:Looney2011). The in-ear placement can produce signal-to-noise ratios
 comparable to those from conventional EEG electrode placements, is robust to
 common sources of artifacts, and can be used in a brain-computer interface (BCI)
-system based on auditory and visual evoked potentials \cite{Kidmose2013a}. One
+system based on auditory and visual evoked potentials (\cite{Kidmose2013a}). One
 previous study attempted to demonstrate user authentication using in-ear EEG,
-but was only able to attain an accuracy level of 80\%, limited by the use of a
+but was only able to attain an accuracy level of 80%, limited by the use of a
 consumer-grade device with a single generic-fit electrode
-\cite{curran2016passthoughts}.
+(\cite{curran2016passthoughts}).
 
 ** Passthoughts and behavioral authentication
 
 The use of EEG as a biometric signal for user authentication has a relatively
 short history. In 2005, Thorpe et al. motivated and outlined the design of a
-passthoughts system \cite{Thorpe2005}. Since 2002, a number of independent
-groups have achieved 99-100\% authentication accuracy for small populations
+passthoughts system (\cite{Thorpe2005}). Since 2002, a number of independent
+groups have achieved 99-100% authentication accuracy for small populations
 using research-grade and consumer-grade scalp-based EEG systems
-\cite{Poulos2002,Marcel2007a,Ashby2011,Chuang2013b}. Several recent works on
+(\cite{Poulos2002,Marcel2007a,Ashby2011,Chuang2013b}). Several recent works on
 brainwave biometrics have independently demonstrated individuals' EEG permanence
-over one to six months \cite{Armstrong2015,Maiorana2016} or even over one year
-\cite{Ruiz2017}.
+over one to six months (\cite{Armstrong2015,Maiorana2016}) or even over one year
+(\cite{Ruiz2017}).
 
 *** Authentication factors
 
 Behavioral authentication methods such as keystroke dynamics and speaker
 authentication can be categorized as one-step two-factor authentication schemes.
 In both cases, the knowledge factor (password or passphrase) and inherence
-factor (typing rhythm or speaker's voice) are employed \cite{Monrose1997}. In
+factor (typing rhythm or speaker's voice) are employed (\cite{Monrose1997}). In
 contrast, the Nymi band supports one-step two-factor authentication via the
 inherence factor (cardiac rhythm that is supposed to be unique to each
 individual) and the possession factor (the wearing of the band on the wrist)
-\cite{Nymi}. However, as far as we know, no one has proposed or demonstrated a
+(\cite{Nymi}). However, as far as we know, no one has proposed or demonstrated a
 one-step three-factor authentication scheme.
 
 ** Usable authentication
@@ -123,25 +144,25 @@ warrant adoption and prolonged use. Sasse et al. describe usability issues with
 common knowledge-based systems like alphanumeric passwords, in particular that a
 breach in systems which require users to remember complex passwords that must be
 frequently changed is a failure on the part of the system's design, not the
-fault of the user \cite{sasse2001}. Other research analyzed some of the
+fault of the user (\cite{sasse2001}). Other research analyzed some of the
 complexities of applying human factors heuristics for interface design to
 authentication, and indicate the importance of social acceptability,
-learnability, and simplicity of authentication methods \cite{braz2006}.
+learnability, and simplicity of authentication methods (\cite{braz2006}).
 Technologies worn on the head entail particular usability issues; in their
 analysis of user perceptions of headworn devices, Genaro et al. identified
 design, usability, ease of use, and obtrusiveness among the top ten concerns of
 users, as well as qualitative comments around comfort and ``looking weird''
-\cite{Genaro2014}.
+(\cite{Genaro2014}).
 
 Mobile and wearable technologies' continuous proximity to the user's body
 provides favorable conditions for unobtrusively capturing biometrics for
 authentication. Many such uses have been proposed that embrace usability like
-touch-based interactions \cite{Tartz2015,Holz2015} and walking patterns
-\cite{Lu2014} using mobile phones, as well as identification via head movements
-and blinking in head-worn devices \cite{Rogers2015}. However, these typically
+touch-based interactions (\cite{Tartz2015,Holz2015}) and walking patterns
+(\cite{Lu2014}) using mobile phones, as well as identification via head movements
+and blinking in head-worn devices (\cite{Rogers2015}). However, these typically
 draw only from the inherence factor. Chen et al. proposed an inherence and
 knowledge two-factor method for multi-touch mobile devices based on a user's
-unique finger tapping of a song \cite{Chen2015}, though it may be vulnerable to
+unique finger tapping of a song (\cite{Chen2015}), though it may be vulnerable to
 ``shoulder surfing'': imposters observing and mimicking the behavior to gain
 access.
 
@@ -165,7 +186,7 @@ time they want to unlock their phone.
 ``One-step two-factor authentication" has been proposed as a new approach to
 authentication that can provide the security benefits of two-factor
 authentication without incurring the hassle cost of two-step verification
-\cite{Chuang2014}. In this work we undertake, to the best of our knowledge,
+(\cite{Chuang2014}). In this work we undertake, to the best of our knowledge,
 the first-ever study and design of one-step, \textit{three}-factor
 authentication. In computer security, authenticators are classified into three
 types: knowledge factors (e.g., passwords and PINs), possession factors (e.g.,
@@ -212,7 +233,7 @@ questionnaire, a setup period with the OpenBCI system and earpieces sed for EEG
 collection with a second impedance check, their performance of nine mental
 tasks, and finally a post-experiment questionnaire.
 
-** Earpiece desgin and manufacturing
+** Earpiece design and manufacturing
 
 \begin{figure}
 \centering
@@ -231,7 +252,7 @@ Channels were created in the 3D model to allow wire leads and associated EEG
 electrodes as well as a plastic tube to deliver audio. This 3D model was then
 sent to a 3D printer after which wires, leads, and associated AgCl electrodes
 were installed. The positions of the earpiece electrodes were simplified from
-those described in \cite{Mikkelsen2015}. We reduced the number of canal
+those described in (\cite{Mikkelsen2015}). We reduced the number of canal
 electrodes in order to prevent electrical bridging and positioned them
 approximately 180 degrees apart in the canal (posterior/back and anterior/front
 locations in the canal). One other electrode was placed in the concha. An
@@ -242,7 +263,7 @@ example of one of the manufactured earpieces is shown in Figure
 
 We selected a set of mental tasks based on findings in related work regarding
 the relative strengths of different tasks in authentication accuracy and
-usability as reported by participants \cite{Chuang2013b,curran2016passthoughts}.
+usability as reported by participants (\cite{Chuang2013b,curran2016passthoughts}).
 Furthermore, given the in-ear placement of the electrodes and therefore the
 proximity to the temporal lobes containing the auditory cortex, we tested
 several novel authentication tasks based specifically on aural imagery or
@@ -278,9 +299,9 @@ Sequence & Imagine a face, number, and word on cues with eyes open & Yes & Yes &
 
 All sites were cleaned with ethanol prior to electrode placement and a small
 amount of conductive gel was used on each electrode. For EEG recording we used
-an 8-channel OpenBCI system \cite{michalska2009openbci} which is open-source and
+an 8-channel OpenBCI system (\cite{michalska2009openbci}) which is open-source and
 costs about 600 USD; an alternative to medical-grade EEG systems (which cost
-\textgreater20,000 USD), with demonstrated effectiveness \cite{Frey2016}. The
+\textgreater20,000 USD), with demonstrated effectiveness (\cite{Frey2016}). The
 ground was placed at the center of the forehead, at AFz according to the 10-20
 International Standard for Electrode Placement (ISEP), and reference on the left
 mastoid (behind the left ear). The AFz ground location was intentional to not
@@ -298,7 +319,7 @@ through small tubes in the earpieces.
 
 During the experiment, participants were seated in a comfortable position in a
 quiet room facing a laptop on which the instructions and stimuli were presented
-and timings recorded using PsychoPy \cite{peirce2007psychopy}. All tasks were
+and timings recorded using PsychoPy (\cite{peirce2007psychopy}). All tasks were
 performed for five trials each, followed by another set of five trials each to
 reduce boredom and repetition effects. Each trial was 10 seconds in length, for
 a total of 10 trials or 100 seconds of data collected per task. The instructions
@@ -373,8 +394,8 @@ participant as an example. We see the same validation in the right ear channels.
 ** Classification
 
 Since past work has shown that classification tasks in EEG-based brain-computer
-interfaces (BCI) are linear \cite{Garrett2003a}, we used XGBoost, a popular tool
-for logistic linear classification \cite{Chen2016}, to analyze the mental task
+interfaces (BCI) are linear (\cite{Garrett2003a}), we used XGBoost, a popular tool
+for logistic linear classification (\cite{Chen2016}), to analyze the mental task
 EEG data. Compared to other linear classifiers, XGBoost uses gradient boosting
 in which an algorithm generates a decision tree of weak linear classifiers that
 minimizes a given loss function. Gradient boosting generally improves linear
@@ -441,9 +462,9 @@ lowest FAR, followed by the combined right and left ear electrodes,
 respectively. For left ear (3 electrodes), right ear (3 electrodes), and both
 ears (6 electrodes) configurations, every participant had at least one task with
 zero FAR and FRR. Among the individual electrodes, the left canal front
-electrode produced a mean FAR of 0.12\% and a mean FRR just below 20\%. Counter
+electrode produced a mean FAR of 0.12% and a mean FRR just below 20%. Counter
 to our expectations, Fp1 does not perform as well as most ear electrodes, though
-overall these reported FAR rates are \textless\textless 1\%.
+overall these reported FAR rates are \textless\textless 1%.
 
 For each position, FAR was about ten times lower than FRR, which is preferable
 for authentication, as false authentications are generally more costly than
@@ -459,8 +480,8 @@ following analyses.
 Using only data from the three left ear electrodes, the FARs and FRRs of each
 task for each participant are shown in Tables \ref{tab:farall} and
 \ref{tab:frrall}, respectively. We find at least one task for each participant
-that achieves 0\% FAR, and for five participants a task where both the FAR and
-FRR are 0\%. Each task achieved perfect 0\% FAR and FRR for at least one
+that achieves 0% FAR, and for five participants a task where both the FAR and
+FRR are 0%. Each task achieved perfect 0% FAR and FRR for at least one
 participant, notably \textit{breathe} and \textit{song - open} achieved perfect
 FAR and FRR for three out of seven participants.
 
@@ -504,8 +525,8 @@ Sport & 0.0250 & 0.0250 & 0 & 0.0125 & 0.0375 & 0.0125 & 0.0125\\ \hline
 
 FAR and FRR results by task are shown in Figure \ref{fig:meanByTask}, averaged
 across participants. Across all tasks, the sport task produced the lowest FAR.
-Specifically, it produced 0\% FAR for all seven participants, with a
-corresponding 1.8\% FRR. This suggests that the authentication scheme can work
+Specifically, it produced 0% FAR for all seven participants, with a
+corresponding 1.8% FRR. This suggests that the authentication scheme can work
 very well even if we limit the passthoughts to just a single task category,
 where the users could choose a personalized secret for that task. Interestingly,
 tasks like \textit{breathe} and \textit{breathe - open} performed very well
@@ -526,8 +547,8 @@ and from this we estimate authentication accuracy, $ACC$, as:
      ACC = 100 * (1 - HTER)
 \end{equation}
 
-Using our best performing tasks' FARs, averaging 0\% and these tasks' associated
-FRRs, averaging 0.36%, we obtain an overall authentication accuracy of 99.82\%
+Using our best performing tasks' FARs, averaging 0% and these tasks' associated
+FRRs, averaging 0.36%, we obtain an overall authentication accuracy of 99.82%
 using data from the three electrodes in the left ear. For comparison, if we
 limit ourselves to only a single electrode (left canal-front), we obtain an
 authentication accuracy of 90%.
@@ -539,7 +560,7 @@ authentication accuracy of 90%.
 \label{fig:meanByTask}
 \end{figure*}
 
-Our ``leave one out'' analysis with participants' best tasks maintained 0\% FAR
+Our ``leave one out'' analysis with participants' best tasks maintained 0% FAR
 across all participant combinations.
 
 ** Relative contributions of authentication factors
@@ -573,7 +594,7 @@ Overall, our default training strategy which engages both knowledge and
 inherence factors achieves the lowest FAR (Table \ref{tab:compare}). The FAR in
 the inherence-only scenario (Table \ref{tab:compare} row 2) is ten times higher,
 and in the knowledge-only scenario (Table \ref{tab:compare} row 3) FAR is one
-hundred times higher, though for all scenarios FAR is less than 1\%. However,
+hundred times higher, though for all scenarios FAR is less than 1%. However,
 FRR is \textit{lower} with the inherence-only training strategy than the
 default. FRR is highest in the combined negative examples case (Table
 \ref{tab:compare} row 4), though FAR remains low.
@@ -749,7 +770,7 @@ X & 70.0 & 10.5 & 8.9\\
 Fourth, our ``leave one out'' analysis can also be seen as another set of
 outside imposter attacks, in which each participant acts as an outside imposter
 for each other participant, but where the imposters have their own manufactured
-earpieces and passthoughts. The best task classifiers achieved FARs of 0\%
+earpieces and passthoughts. The best task classifiers achieved FARs of 0%
 across all combinations, successfully rejecting the simulated imposters.
 
 * Discussion, limitations & directions for future work
@@ -773,10 +794,10 @@ captured and recognized quickly. Passthoughts also appear to be quite memorable
 given our two-week recall follow-up and a few were rated highly repeatable and
 engaging. Furthermore, no spoofed attacks were successful in our analyses.
 
-Compared against the 80\% authentication accuracy achieved with a single
-generic-fit electrode \cite{curran2016passthoughts}, we are able to achieve 90\%
+Compared against the 80% authentication accuracy achieved with a single
+generic-fit electrode (\cite{curran2016passthoughts}), we are able to achieve 90%
 accuracy with a custom-fit earpiece using data from a single electrode, and
-99.8\% accuracy with the same custom-fit earpiece using three electrodes. This
+99.8% accuracy with the same custom-fit earpiece using three electrodes. This
 points to the importance of both the goodness-of-fit of the electrodes and the
 number of channels as contributors to authentication performance.
 
@@ -803,10 +824,9 @@ the most common forms of authentication, alphanumeric passwords, where increased
 complexity ensures better performance. The topic of user perceptions of
 different passthoughts as means of authentication warrants its own research.
 
-
 The difficulty of stealing someone else's knowledge factor emerged in our
 spoofing attacks. In conventional password-based systems, once the knowledge
-factor is divulged, an attacker can essentially spoof the target with 100\%
+factor is divulged, an attacker can essentially spoof the target with 100%
 success rate. In a passthought-based system, even though our target participant
 documented their chosen passthought, the spoofers found ambiguity in how these
 passthoughts could be expressed. For example, for the \textit{face} task, the
@@ -819,7 +839,7 @@ should examine this effect more explicitly to elucidate the effect of knowledge
 task specificity on defense against imposters.
 
 Performance on Fp1 was not as high as performance in the ear, despite Fp1's
-popularity in past work on passthoughts \cite{Chuang2013b}. One plausible
+popularity in past work on passthoughts (\cite{Chuang2013b}). One plausible
 explanation is that several of our mental tasks involved audio (real or
 imagined), which we would expect to be better observed from the auditory cortex
 near the ears, as opposed to frontal lobe activity (e.g., concentration) that
@@ -829,13 +849,13 @@ recording.
 
 The sample size of our study, while small, is comparable to that of other EEG
 authentication studies
-\cite{Ashby2011,Marcel2007a,Poulos2002,Chuang2013b,curran2016passthoughts} and
-other custom-fit in-ear EEG research \cite{Kidmose2013a,Mikkelsen2015}. The
+(\cite{Ashby2011,Marcel2007a,Poulos2002,Chuang2013b,curran2016passthoughts}) and
+other custom-fit in-ear EEG research (\cite{Kidmose2013a,Mikkelsen2015}). The
 fitting and manufacturing of custom-fit earpieces for each recruited participant
 was the main limitation to increasing our sample size. This may very well pose a
 limitation in the proliferation and adoption of such a technology as well,
 although recently there have been developments in at-home kits for creating
-one's own custom-fitted earpieces \cite{voix2015settable} that could help
+one's own custom-fitted earpieces (\cite{voix2015settable}) that could help
 overcome this barrier.
 
 The relative homogeneity of our participant pool can be seen as a strength of
@@ -871,6 +891,9 @@ could be aligned with currently used technology of similar form factors, for
 example speakers could be placed inside our current custom-fit pieces to produce
 working ``hearables'' that could be used as ordinary headphones.
 
+
+** Limitations
+
 A key limitation to this work is that our experiments were conducted in a
 controlled laboratory setting with participants in a stationary, sitting
 position. Future work should examine EEG data collected from a variety of
@@ -888,7 +911,7 @@ stored.
 Finally, our work leaves room for some clear user experience improvements.
 Future work should test the performance of this system using dry electrodes,
 which are commonly found in consumer EEG devices and have shown recent promise
-for ear EEG systems \cite{kappel2018dry}, as eliminating the need for conductive
+for ear EEG systems (\cite{kappel2018dry}), as eliminating the need for conductive
 gel would very likely improve comfort and usability and it is unlikely any
 system involving gel will be widely adopted. Future work should also attempt a
 closed-loop (or online) passthought system, in which users receive immediate
@@ -896,27 +919,25 @@ feedback on the result of their authentication attempt. A closed-loop BCI system
 would assist in understanding how human learning effects might impact
 authentication performance, as the human and machine co-adapt.
 
-* Health, neuroscience & in-ear EEG
+** Health, neuroscience & in-ear EEG
 
 Neuroscience fuels some of the most chilling predictions in science fiction
-cite:Welsh2011. It also stands for some of the greatest possible advances in
+(cite:Welsh2011). It also stands for some of the greatest possible advances in
 medicine, mental health, and understanding of human behavior. One ambitious goal
-is to detect or even predict seizures cite:Mormann2006.
+is to detect or even predict seizures (cite:Mormann2006).
 
 However, the original, and most active areas of research in BCI surround the
-creation of tools for persons with muscular disabilites cite:Carrino2012. By
+creation of tools for persons with muscular disabilites (cite:Carrino2012). By
 collecting unstructured or semi-structured EEG data in the wild, passthought
-systems could help improve the development of such BCIs cite:Grierson2011a. The
+systems could help improve the development of such BCIs (cite:Grierson2011a). The
 small size of data repositories, limited mostly by the clinical trials needed to
 build BCIs for persons with disabilities, has consistently frustrated attempts
-to improve on algorithms and protocols in this field cite:Allison2009.
-
-Though the application context for passthoughts is quite different from
-wheelchairs, and although passthought users may not have muscular disabilities,
-pursuing passthoughts as an area of research will inevitably yield larger
-repositories of EEG data than have been collected to date. This data could prove
-invaluable for the development of EEG-based BCIs across a variety of fields,
-including (but not limited to) assistive technologies.
+to improve on algorithms and protocols in this field (cite:Allison2009). Although
+passthought users may not have muscular disabilities, pursuing passthoughts as
+an area of research will inevitably yield larger repositories of EEG data than
+have been collected to date. This data could prove invaluable for the
+development of EEG-based BCIs across a variety of fields, including (but not
+limited to) assistive technologies.
 
 Again, these opportunities must strike a balance with the risks of individual
 users' privacy and security. Violating user privacy by revealing EEG data, even
@@ -929,19 +950,31 @@ deeper understanding of individuals' attitudes about the meaning of such
 signals, and how private people believe them to be.
 # It will also require understanidnand of user attitudes about what these signals might mean.
 # What are people willing to give up, regardless of empirical evidence?
-* Conclusion
 
-In general, as sensors grow smaller and cheaper, devices more connected, and machine learning more sophisticated, 
-people will build increasingly high-resolution models of human physiology ``in the wild.''
-Passthoughts present just a microcosm of the good such advances might bring, 
-along with some of the most pressing anxieties: 
-What does pervasive physiological recording mean for our privacy, security, safety? 
-The balancing act between these risks and opportunities will prove recurring theme for decades to come.
-In the meantime, probing the outer limits of ubiquitous, pervasive sensing can shed light on both the good and bad that our near future may bring.
-* TODO Conclusion :ARCHIVE:
+In general, as sensors grow smaller and cheaper, devices more connected, and
+machine learning more sophisticated, people will build increasingly
+high-resolution models of human physiology ``in the wild.'' Passthoughts present
+just a microcosm of the good such advances might bring, along with some of the
+most pressing anxieties: What does pervasive physiological recording mean for
+our privacy, security, safety? The balancing act between these risks and
+opportunities will prove recurring theme for decades to come. In the meantime,
+probing the outer limits of ubiquitous, pervasive sensing can shed light on both
+the good and bad that our near future may bring.
+
+* Conclusions and outlook
+
+Using custom-fit EEG earpieces, we produced a one-step, three-factor
+authentication system. We demonstrated that our system has high accuracy, higher
+than prior work using non-custom earpieces. We demonstrated that both inherence
+and knowledge factors contribute to authentication accuracy, and performed a
+simulated attack to show our system's robustness against impersonation. We
+believe that custom-fit EEG earpieces provide a practical path forward for BCI
+applications, security-related and beyond, both for healthy individuals and for
+persons with disabilities.
+
 * Acknowledgements
 
 Withheld for blind review.
 
-\bibliographystyle{ACM-Reference-Format}
+\bibliographystyle{ext/frontiersinSCNS_ENG_HUMS} 
 \bibliography{references}
