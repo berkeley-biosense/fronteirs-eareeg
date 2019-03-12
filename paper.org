@@ -19,21 +19,10 @@
 
 %%% Leave the Abstract empty if your article does not require one, please see the Summary Table for full details.
 \section{}
-In-ear EEG offers a promising path toward usable, discreet brain-computer interfaces (BCIs) 
-for both healthy individuals and persons with disabilities.
-To test the promise of this modality,
-we produced a brain-based authentication system 
-using custom-fit EEG earpieces.
-We demonstrated that our system has high accuracy, higher
-than prior work using non-custom earpieces. We demonstrated that both inherence
-and knowledge factors contribute to authentication accuracy, and performed a
-simulated attack to show our system's robustness against impersonation. 
-From an authentication standpoint, our system provides
-three factors of authentication in a single step.
-From a usability standpoint, our system does not require a cumbersome, head-worn device.
+In-ear EEG offers a promising path toward usable, discreet brain-computer interfaces (BCIs) for both healthy individuals and persons with disabilities. To test the promise of this modality, we produced a brain-based authentication system using custom-fit EEG earpieces. We demonstrated that our system has high accuracy, higher than prior work using non-custom earpieces. We demonstrated that both inherence and knowledge factors contribute to authentication accuracy, and performed a simulated attack to show our system's robustness against impersonation. From an authentication standpoint, our system provides three factors of authentication in a single step. From a usability standpoint, our system does not require a cumbersome, head-worn device.
 
 \tiny
- \keyFont{ \section{Keywords:} keyword, keyword, keyword, keyword, keyword, keyword, keyword, keyword} %All article types: you may provide up to 8 keywords; at least 5 are mandatory.
+ \keyFont{ \section{Keywords:} passthoughts, authentication, in-ear EEG, ubiquitous EEG, brain-computer interface}
 \end{abstract}
 
 #+END_EXPORT
@@ -63,8 +52,8 @@ largely as a tradeoff between ergonomics and signal quality (cite:Kidmose2013a),
 in-ear EEG signals are at least robust enough to detect auditory evoked
 responses (cite:Kidmose2012), and more recent work has indicated that EEG
 collected in the ear may have its own, unique affordances. For example, one
-study built a rudimentary eye-tracker using muscular signals (EMG, or
-electromyography) collected from the ear canal (cite:Manabe2013).
+study built a rudimentary eye-tracker using ocular signals (EOG, or
+electrooculography) collected from the ear canal (cite:Manabe2013).
 
 To test in-ear EEG's capacity to produce usable BCI applications, this paper
 attempts to use the sensing modality to construct a brain-based authentication
@@ -77,7 +66,7 @@ password, then entering a code from one's cellphone). Brain-based authentication
 combines multiple factors of authentication into a single step: a knowledge
 factor (one's secret thought), and a biometric factor (the unique way one
 express that thought neurally) (cite:Chuang2014). By incorporating a custom-fit
-earbud, we set otu to combine all three factors of authentication into a single
+earbud, we set out to combine all three factors of authentication into a single
 step.
 
 This paper makes several, distinct contributions. First, we achieve a 99.82%
@@ -299,14 +288,15 @@ Sequence & Imagine a face, number, and word on cues with eyes open & Yes & Yes &
 
 All sites were cleaned with ethanol prior to electrode placement and a small
 amount of conductive gel was used on each electrode. For EEG recording we used
-an 8-channel OpenBCI system (\cite{michalska2009openbci}) which is open-source and
-costs about 600 USD; an alternative to medical-grade EEG systems (which cost
+an 8-channel OpenBCI system (\cite{michalska2009openbci}) which is open-source
+and costs about 600 USD; an alternative to medical-grade EEG systems (which cost
 \textgreater20,000 USD), with demonstrated effectiveness (\cite{Frey2016}). The
 ground was placed at the center of the forehead, at AFz according to the 10-20
 International Standard for Electrode Placement (ISEP), and reference on the left
-mastoid (behind the left ear). The AFz ground location was intentional to not
-bias left or right ear recordings, though future systems using one ear only
-should test relocating the ground to a site on one ear (e.g., the earlobe). Six
+mastoid (behind the left ear). We chose the AFz ground location to minimize the
+chances that our measruement setup caused differences between readings from the
+left and right electrodes, , though future systems using one ear only should
+test relocating the ground to a site on one ear (e.g., the earlobe). Six
 channels were used for the three electrodes on each earpiece (shown in Figure
 \ref{fig:earpiece_diagram}). For the remaining two channels, one AgCl ring
 electrode was placed on the right mastoid for later re-referencing, and one at
@@ -345,7 +335,7 @@ via two metrics: low impedances measured for the ear electrodes, and alpha-band
 EEG activity attenuation when a participant's eyes were open versus closed.
 
 It is important that the electrical impedances achieved for electrodes are low
-($<$10 kOhm) to obtain quality EEG signals. Table \ref{tab:impedances} below
+(<10 kOhm) to obtain quality EEG signals. Table \ref{tab:impedances} below
 summarizes the impedances across the seven participants' six ear channels. With
 the exception of a few channels in select participants, impedances achieved were
 good overall. Most of the recorded impedances of the earpiece electrodes were
@@ -477,11 +467,13 @@ following analyses.
 
 ** Authentication results
 
+#+BEGIN_EXPORT latex
+
 Using only data from the three left ear electrodes, the FARs and FRRs of each
 task for each participant are shown in Tables \ref{tab:farall} and
 \ref{tab:frrall}, respectively. We find at least one task for each participant
-that achieves 0% FAR, and for five participants a task where both the FAR and
-FRR are 0%. Each task achieved perfect 0% FAR and FRR for at least one
+that achieves 0\% FAR, and for five participants a task where both the FAR and
+FRR are 0\%. Each task achieved perfect 0\% FAR and FRR for at least one
 participant, notably \textit{breathe} and \textit{song - open} achieved perfect
 FAR and FRR for three out of seven participants.
 
@@ -525,8 +517,8 @@ Sport & 0.0250 & 0.0250 & 0 & 0.0125 & 0.0375 & 0.0125 & 0.0125\\ \hline
 
 FAR and FRR results by task are shown in Figure \ref{fig:meanByTask}, averaged
 across participants. Across all tasks, the sport task produced the lowest FAR.
-Specifically, it produced 0% FAR for all seven participants, with a
-corresponding 1.8% FRR. This suggests that the authentication scheme can work
+Specifically, it produced 0\% FAR for all seven participants, with a
+corresponding 1.8\% FRR. This suggests that the authentication scheme can work
 very well even if we limit the passthoughts to just a single task category,
 where the users could choose a personalized secret for that task. Interestingly,
 tasks like \textit{breathe} and \textit{breathe - open} performed very well
@@ -547,11 +539,11 @@ and from this we estimate authentication accuracy, $ACC$, as:
      ACC = 100 * (1 - HTER)
 \end{equation}
 
-Using our best performing tasks' FARs, averaging 0% and these tasks' associated
-FRRs, averaging 0.36%, we obtain an overall authentication accuracy of 99.82%
+Using our best performing tasks' FARs, averaging 0\% and these tasks' associated
+FRRs, averaging 0.36\%, we obtain an overall authentication accuracy of 99.82\%
 using data from the three electrodes in the left ear. For comparison, if we
 limit ourselves to only a single electrode (left canal-front), we obtain an
-authentication accuracy of 90%.
+authentication accuracy of 90\%.
 
 \begin{figure*}
 \centering
@@ -560,10 +552,13 @@ authentication accuracy of 90%.
 \label{fig:meanByTask}
 \end{figure*}
 
-Our ``leave one out'' analysis with participants' best tasks maintained 0% FAR
+Our ``leave one out'' analysis with participants' best tasks maintained 0\% FAR
 across all participant combinations.
 
+#+END_EXPORT
 ** Relative contributions of authentication factors
+
+#+BEGIN_EXPORT latex
 
 Our results thus far establish good performance in our default training
 strategy, in which we count as negative examples recordings from the wrong
@@ -594,11 +589,12 @@ Overall, our default training strategy which engages both knowledge and
 inherence factors achieves the lowest FAR (Table \ref{tab:compare}). The FAR in
 the inherence-only scenario (Table \ref{tab:compare} row 2) is ten times higher,
 and in the knowledge-only scenario (Table \ref{tab:compare} row 3) FAR is one
-hundred times higher, though for all scenarios FAR is less than 1%. However,
+hundred times higher, though for all scenarios FAR is less than 1\%. However,
 FRR is \textit{lower} with the inherence-only training strategy than the
 default. FRR is highest in the combined negative examples case (Table
 \ref{tab:compare} row 4), though FAR remains low.
 
+#+END_EXPORT
 ** Usability
 
 Before the end of the session, participants completed a usability questionnaire.
@@ -776,7 +772,7 @@ across all combinations, successfully rejecting the simulated imposters.
 * Discussion, limitations & directions for future work
 
 Our findings demonstrate the apparent feasibility of a passthoughts system
-consisting of a single earpiece with three electrodes and a ground/reference,
+consisting of a single earpiece with three electrodes, a ground, and a reference,
 all in or on the left ear. Notably, the gain in performance when adding an
 additional three electrodes from the right ear is only marginal in our results,
 suggesting a single earpiece could suffice though this may change with larger
@@ -843,9 +839,10 @@ popularity in past work on passthoughts (\cite{Chuang2013b}). One plausible
 explanation is that several of our mental tasks involved audio (real or
 imagined), which we would expect to be better observed from the auditory cortex
 near the ears, as opposed to frontal lobe activity (e.g., concentration) that
-might be more easily picked up near Fp1. Future work should continue to
-investigate what classes of mental tasks best lend themselves to in-ear
-recording.
+might be more easily picked up near Fp1. Another possible explanation is that
+Fp1 may be more sensitive to large, task-irrelevant artifacts from EOG and
+facial EMG. In either case, future work should continue to investigate what
+classes of mental tasks best lend themselves to in-ear recording.
 
 The sample size of our study, while small, is comparable to that of other EEG
 authentication studies
@@ -929,18 +926,18 @@ is to detect or even predict seizures (cite:Mormann2006).
 However, the original, and most active areas of research in BCI surround the
 creation of tools for persons with muscular disabilites (cite:Carrino2012). By
 collecting unstructured or semi-structured EEG data in the wild, passthought
-systems could help improve the development of such BCIs (cite:Grierson2011a). The
-small size of data repositories, limited mostly by the clinical trials needed to
-build BCIs for persons with disabilities, has consistently frustrated attempts
-to improve on algorithms and protocols in this field (cite:Allison2009). Although
-passthought users may not have muscular disabilities, pursuing passthoughts as
-an area of research will inevitably yield larger repositories of EEG data than
-have been collected to date. This data could prove invaluable for the
-development of EEG-based BCIs across a variety of fields, including (but not
-limited to) assistive technologies.
+systems could help improve the development of such BCIs (cite:Grierson2011a).
+The small size of data repositories, limited mostly by the clinical trials
+needed to build BCIs for persons with disabilities, has consistently frustrated
+attempts to improve on algorithms and protocols in this field
+(cite:Allison2009). Although passthought users may not have muscular
+disabilities, pursuing passthoughts as an area of research will inevitably yield
+larger repositories of EEG data than have been collected to date. This data
+could prove invaluable for the development of EEG-based BCIs across a variety of
+fields, including (but not limited to) assistive technologies.
 
-Again, these opportunities must strike a balance with the risks of individual
-users' privacy and security. Violating user privacy by revealing EEG data, even
+Again, these opportunities must strike a balance with the risks borne by users
+around privacy and security. Violating user privacy by revealing EEG data, even
 to researchers, could undermine any chance of wider BCI adoption in the
 long-term. Striking this balance will require a deeper understanding of the
 statistical properties of signals. How much data will users really need to give
@@ -948,8 +945,6 @@ up? What counts as an ``anomalous'' reading? Answers to these questions could
 themselves inform neuroscientific inquiry. This balance will also require a
 deeper understanding of individuals' attitudes about the meaning of such
 signals, and how private people believe them to be.
-# It will also require understanidnand of user attitudes about what these signals might mean.
-# What are people willing to give up, regardless of empirical evidence?
 
 In general, as sensors grow smaller and cheaper, devices more connected, and
 machine learning more sophisticated, people will build increasingly
@@ -957,9 +952,10 @@ high-resolution models of human physiology ``in the wild.'' Passthoughts present
 just a microcosm of the good such advances might bring, along with some of the
 most pressing anxieties: What does pervasive physiological recording mean for
 our privacy, security, safety? The balancing act between these risks and
-opportunities will prove recurring theme for decades to come. In the meantime,
-probing the outer limits of ubiquitous, pervasive sensing can shed light on both
-the good and bad that our near future may bring.
+opportunities will prove recurring theme for decades to come. Perhaps
+passthought authentication could better protect sensitive readings such as EEG.
+Probing the outer limits of ubiquitous, pervasive sensing can shed light on both
+the good and bad of ubiquitous physiological monitoring.
 
 * Conclusions and outlook
 
