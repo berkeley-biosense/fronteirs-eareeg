@@ -19,7 +19,16 @@
 
 %%% Leave the Abstract empty if your article does not require one, please see the Summary Table for full details.
 \section{}
-In-ear EEG offers a promising path toward usable, discreet brain-computer interfaces (BCIs) for both healthy individuals and persons with disabilities. To test the promise of this modality, we produced a brain-based authentication system using custom-fit EEG earpieces. We demonstrated that our system has high accuracy, higher than prior work using non-custom earpieces. We demonstrated that both inherence and knowledge factors contribute to authentication accuracy, and performed a simulated attack to show our system's robustness against impersonation. From an authentication standpoint, our system provides three factors of authentication in a single step. From a usability standpoint, our system does not require a cumbersome, head-worn device.
+In-ear EEG offers a promising path toward usable, discreet brain-computer
+interfaces (BCIs) for both healthy individuals and persons with disabilities. To
+test the promise of this modality, we produced a brain-based authentication
+system using custom-fit EEG earpieces. In a sample of N=7 participants, we demonstrated that our system has high
+accuracy, higher than prior work using non-custom earpieces. We demonstrated
+that both inherence and knowledge factors contribute to authentication accuracy,
+and performed a simulated attack to show our system's robustness against
+impersonation. From an authentication standpoint, our system provides three
+factors of authentication in a single step. From a usability standpoint, our
+system does not require a cumbersome, head-worn device.
 
 \tiny
  \keyFont{ \section{Keywords:} passthoughts, authentication, in-ear EEG, ubiquitous EEG, brain-computer interface}
@@ -57,17 +66,17 @@ electrooculography) collected from the ear canal (cite:Manabe2013).
 
 To test in-ear EEG's capacity to produce usable BCI applications, this paper
 attempts to use the sensing modality to construct a brain-based authentication
-system (cite:Chuang2013b) using custom-fit, EEG earbuds. Authentication relies on
-one or more /factors/: knowledge (something one knows), posesssion (something
+system (cite:Chuang2013b) using custom-fit, EEG earbuds. Authentication relies
+on one or more /factors/: knowledge (something one knows), posesssion (something
 one has), or inherence (properties of one's body). Where multifactor
 authentication provides added security over single-factor authentication such as
 passwords, multiple factors typically require multiple steps (e.g., entering a
-password, then entering a code from one's cellphone). Brain-based authentication
-combines multiple factors of authentication into a single step: a knowledge
-factor (one's secret thought), and a biometric factor (the unique way one
-express that thought neurally) (cite:Chuang2014). By incorporating a custom-fit
-earbud, we set out to combine all three factors of authentication into a single
-step.
+password, then entering a code from one's cellphone). One particular brain-based
+authentication strategy, /passthoughts/, combines multiple factors of
+authentication into a single step: a knowledge factor (one's secret thought),
+and a biometric factor (the unique way one express that thought neurally)
+(cite:Chuang2014). By incorporating a custom-fit earbud, we set out to combine
+all three factors of authentication into a single step (Figure \ref{fig:earpiece_diagram}).
 
 This paper makes several, distinct contributions. First, we achieve a 99.82%
 authentication accuracy with zero false acceptance rate (FAR) using personalized
@@ -98,7 +107,8 @@ system based on auditory and visual evoked potentials (\cite{Kidmose2013a}). One
 previous study attempted to demonstrate user authentication using in-ear EEG,
 but was only able to attain an accuracy level of 80%, limited by the use of a
 consumer-grade device with a single generic-fit electrode
-(\cite{curran2016passthoughts}).
+(\cite{curran2016passthoughts}). A follow-up study with a single, generic-fit
+electrode achieved an accuracy of 95.7% over multiple days cite:nakamura2018ear.
 
 ** Passthoughts and behavioral authentication
 
@@ -209,13 +219,14 @@ socially accepted technologies.
 
 Seven male, right-handed participants (P1-P7), five students and two
 researchers, were recruited via a university mailing list and completed our
-study protocol approved by our local ethics review board. Though this sample is
-relatively homogenous and greater diversity is necessary for a larger real-world
-feasibility assessment, this quality interestingly functions to strengthen the
-results of a system designed to discriminate between users (see Discussion).
-After participants' 3D ear molds were obtained, the custom-fit earpieces were
-manufactured, and their fit and electrical impedances were checked, we proceeded
-to the collection of study data.
+study protocol approved by our local ethics review board. The two researcher
+participants were also involved in the development of this study. Though this
+sample is relatively homogenous and greater diversity is necessary for a larger
+real-world feasibility assessment, this quality interestingly functions to
+strengthen the results of a system designed to discriminate between users (see
+Discussion). After participants' 3D ear molds were obtained, the custom-fit
+earpieces were manufactured, and their fit and electrical impedances were
+checked, we proceeded to the collection of study data.
 
 Data collection consisted of participants completing a demographics
 questionnaire, a setup period with the OpenBCI system and earpieces sed for EEG
@@ -224,25 +235,28 @@ tasks, and finally a post-experiment questionnaire.
 
 ** Earpiece design and manufacturing
 
+#+BEGIN_EXPORT latex
 \begin{figure}
 \centering
-\includegraphics[width=.75\linewidth]{./figures/CFEEEG_piecefig_Right.jpg}
-\caption{Photo of one of the manufactured custom-fit earpieces with three embedded electrodes located in the concha, front-facing (anterior) in the ear canal, and back-facing (posterior) in the ear canal.}
+\includegraphics[width=\linewidth]{./figures/auth-pitch.jpeg}
+\caption{On the right, one of the manufactured custom-fit earpieces with three embedded electrodes located in the concha, front-facing (anterior) in the ear canal, and back-facing (posterior) in the ear canal. On the left, three factors of authentication. Passthoughts authentication with a custom-fit in-ear EEG satisfies all three factors.}
 \label{fig:earpiece_diagram}
 \end{figure}
+#+END_EXPORT
 
-To produce custom ear impressions we first cleaned subjects' ears, placed a
-cotton ball with a string attached into the ear canal, and injected silicon into
-the canals. When the silicon dried after a few minutes, the string was pulled to
-remove the impression from the ear canal. This impression was then scanned with
-a 3D scanner and the resulting scan modified to achieve a comfortable fit and to
-ensure the intended electrode sites would make good contact with the skin.
-Channels were created in the 3D model to allow wire leads and associated EEG
-electrodes as well as a plastic tube to deliver audio. This 3D model was then
-sent to a 3D printer after which wires, leads, and associated AgCl electrodes
-were installed. The positions of the earpiece electrodes were simplified from
-those described in (\cite{Mikkelsen2015}). We reduced the number of canal
-electrodes in order to prevent electrical bridging and positioned them
+Earpieces were produced by an audiologist at Starkey, a manufacturer of hearing
+aids. To produce custom ear impressions, subjects' ears were cleaned, a cotton
+ball with a string attached was placed inside the ear canal, and silicone was
+injected into the canals. When the silicone dried after a few minutes, the
+string was pulled to remove the impression from the ear canal. This impression
+was then scanned with a 3D scanner, and the resulting scan modified to achieve a
+comfortable fit and to ensure the intended electrode sites would make good
+contact with the skin. Channels were created in the 3D model to allow wire leads
+and associated EEG electrodes as well as a plastic tube to deliver audio. This
+3D model was then sent to a 3D printer after which wires, leads, and associated
+AgCl electrodes were installed. The positions of the earpiece electrodes were
+simplified from those described in (\cite{Mikkelsen2015}). We reduced the number
+of canal electrodes in order to prevent electrical bridging and positioned them
 approximately 180 degrees apart in the canal (posterior/back and anterior/front
 locations in the canal). One other electrode was placed in the concha. An
 example of one of the manufactured earpieces is shown in Figure
@@ -290,35 +304,48 @@ All sites were cleaned with ethanol prior to electrode placement and a small
 amount of conductive gel was used on each electrode. For EEG recording we used
 an 8-channel OpenBCI system (\cite{michalska2009openbci}) which is open-source
 and costs about 600 USD; an alternative to medical-grade EEG systems (which cost
-\textgreater20,000 USD), with demonstrated effectiveness (\cite{Frey2016}). The
-ground was placed at the center of the forehead, at AFz according to the 10-20
-International Standard for Electrode Placement (ISEP), and reference on the left
-mastoid (behind the left ear). We chose the AFz ground location to minimize the
-chances that our measruement setup caused differences between readings from the
-left and right electrodes, , though future systems using one ear only should
-test relocating the ground to a site on one ear (e.g., the earlobe). Six
-channels were used for the three electrodes on each earpiece (shown in Figure
-\ref{fig:earpiece_diagram}). For the remaining two channels, one AgCl ring
-electrode was placed on the right mastoid for later re-referencing, and one at
-Fp1 (ISEP location above the left eye) to validate the data collected in the
-ears against a common scalp-based placement. Before beginning the experiment,
-the data from each channel was visually inspected using the OpenBCI interface by
-having the participant clench their jaw and blink. Audio stimuli were delivered
-through small tubes in the earpieces.
+\textgreater20,000 USD), with demonstrated effectiveness (\cite{Frey2016}). We
+chose OpenBCI for its flexibility: despite the broad availability of low-cost
+EEG sensors, no commercially-available sensor allowed us to build our own
+recording configuration with a custom number, and configuration, of electrodes.
 
+The ground was placed at the center of the forehead, at AFz according to the
+10-20 International Standard for Electrode Placement (ISEP), and reference on
+the left mastoid (behind the left ear). We chose the AFz ground location to
+minimize the chances that our measruement setup caused differences between
+readings from the left and right electrodes, , though future systems using one
+ear only should test relocating the ground to a site on one ear (e.g., the
+earlobe). Six channels were used for the three electrodes on each earpiece
+(shown in Figure \ref{fig:earpiece_diagram}). For the remaining two channels,
+one AgCl ring electrode was placed on the right mastoid for later
+re-referencing, and one at Fp1 (ISEP location above the left eye) to validate
+the data collected in the ears against a common scalp-based placement. Before
+beginning the experiment, the data from each channel was visually inspected
+using the OpenBCI interface by having the participant clench their jaw and
+blink. Audio stimuli were delivered through small tubes in the earpieces.
+
+#+BEGIN_EXPORT latex
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{./figures/data-collection.pdf}
+\caption{The data collection protocol.}
+\label{fig:data_collection_protocol}
+\end{figure}
+#+END_EXPORT
 
 During the experiment, participants were seated in a comfortable position in a
 quiet room facing a laptop on which the instructions and stimuli were presented
 and timings recorded using PsychoPy (\cite{peirce2007psychopy}). All tasks were
 performed for five trials each, followed by another set of five trials each to
 reduce boredom and repetition effects. Each trial was 10 seconds in length, for
-a total of 10 trials or 100 seconds of data collected per task. The instructions
-were read aloud to participants by the experimenter, and participants advanced
-using a pointer held in their lap to minimize motion artifacts in the data. The
-experimenter also recorded the participant's chosen secrets for the
-\textit{sport}, \textit{song}, \textit{face}, \textit{speech}, and
-\textit{sequence} tasks and reminded the participant of these for the second set
-of trials. After EEG data collection, participants completed a usability
+a total of 10 trials or 100 seconds of data collected per task. This collection
+protocol is outlined in Figure \ref{fig:data_collection_protocol}. The
+instructions were read aloud to participants by the experimenter, and
+participants advanced using a pointer held in their lap to minimize motion
+artifacts in the data. The experimenter also recorded the participant's chosen
+secrets for the \textit{sport}, \textit{song}, \textit{face}, \textit{speech},
+and \textit{sequence} tasks and reminded the participant of these for the second
+set of trials. After EEG data collection, participants completed a usability
 questionnaire assesing each task on 7-point Likert-type scales on dimensions of
 ease of use, level of engagement, repeatability, and likeliness to use for
 real-world authentication as well as a few open response questions.
@@ -343,6 +370,8 @@ less than 5 k\(\Omega\), a benchmark used widely in previous ear EEG work, and
 all except two were less than 10 k\(\Omega\). Nonetheless, the data from all
 electrodes were tested in our other data quality test.
 
+
+#+BEGIN_EXPORT latex
 \begin{table}
 \caption{Electrical impedances measured for concha (C), front (F) and back (B) earpiece electrodes.}
 \label{tab:impedances}
@@ -364,6 +393,30 @@ electrodes were tested in our other data quality test.
 \end{tabular}
 \end{center}
 \end{table}
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\begin{table}%[h]
+\caption{Electrical impedances with P1 wearing each other participant's (P) custom-fitted earpieces, for concha (C), canal-front (F) and canal-back (B). These higher impedances illustrate the value of custom-fit earpieces.}
+\label{tab:p1_imposter_impedances}
+\begin{center}
+\begin{tabular}{lrrrrrr}
+& \multicolumn{6}{c}{Impedance [k\(\Omega\)]} \\
+\cline{2-7}
+& \multicolumn{3}{|c|}{\textbf{Left ear}} & \multicolumn{3}{c|}{\textbf{Right ear}} \\
+\textbf{P} & \textbf{C} & \textbf{F} & \textbf{B} & \textbf{C} & \textbf{F} & \textbf{B} \\
+\hline
+2 & 34.1 & 10.2 & 12.8 & 27.8 & 16.0 & 16.3\\
+3 & 21.1 & 20.9 & 19.0 & 13.5 & 11.3 & 19.5\\
+4 & 14.1 & 11.9 & 9.7 & 11.0 & 11.1 & 13.3\\
+5 & 17.2 & 21.9 & 10.3 & 32.6 & 12.5 & 11.6\\
+6 & 18.7 & 10.0 & 8.4 & 14.8 & 11.5 & 8.9\\
+7 & 91.5 & \textgreater1000 & 21.5 & 33.5 & 26.4 & 31.0\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+#+END_EXPORT
 
 For the alpha-attenuation test, data from the \textit{breathe} task was compared
 with that of the \textit{breathe - open} task. It is a well-known feature of EEG
@@ -693,29 +746,6 @@ ear canal shapes between individuals cite:Akkermans2005, and point to the
 possibility that the presentation of a physical token that provides the correct
 impedance levels can be used as another demonstration of both the inherence and
 possession factors.
-
-#+BEGIN_EXPORT latex
-\begin{table}%[h]
-\caption{Electrical impedances with P1 wearing each other participant's (P) custom-fitted earpieces, for concha (C), canal-front (F) and canal-back (B).}
-\label{tab:p1_imposter_impedances}
-\begin{center}
-\begin{tabular}{lrrrrrr}
-& \multicolumn{6}{c}{Impedance [k\(\Omega\)]} \\
-\cline{2-7}
-& \multicolumn{3}{|c|}{\textbf{Left ear}} & \multicolumn{3}{c|}{\textbf{Right ear}} \\
-\textbf{P} & \textbf{C} & \textbf{F} & \textbf{B} & \textbf{C} & \textbf{F} & \textbf{B} \\
-\hline
-2 & 34.1 & 10.2 & 12.8 & 27.8 & 16.0 & 16.3\\
-3 & 21.1 & 20.9 & 19.0 & 13.5 & 11.3 & 19.5\\
-4 & 14.1 & 11.9 & 9.7 & 11.0 & 11.1 & 13.3\\
-5 & 17.2 & 21.9 & 10.3 & 32.6 & 12.5 & 11.6\\
-6 & 18.7 & 10.0 & 8.4 & 14.8 & 11.5 & 8.9\\
-7 & 91.5 & \textgreater1000 & 21.5 & 33.5 & 26.4 & 31.0\\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-#+END_EXPORT
 
 Second, to explore the scenario of an imposter attempting to gain access, we
 chose the case of the most vulnerable participant, P6, whose earpieces P1, P2,
