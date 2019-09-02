@@ -19,16 +19,7 @@
 
 %%% Leave the Abstract empty if your article does not require one, please see the Summary Table for full details.
 \section{}
-In-ear EEG offers a promising path toward usable, discreet brain-computer
-interfaces (BCIs) for both healthy individuals and persons with disabilities. To
-test the promise of this modality, we produced a brain-based authentication
-system using custom-fit EEG earpieces. In a sample of N=7 participants, we demonstrated that our system has high
-accuracy, higher than prior work using non-custom earpieces. We demonstrated
-that both inherence and knowledge factors contribute to authentication accuracy,
-and performed a simulated attack to show our system's robustness against
-impersonation. From an authentication standpoint, our system provides three
-factors of authentication in a single step. From a usability standpoint, our
-system does not require a cumbersome, head-worn device.
+In-ear EEG offers a promising path toward usable, discreet brain-computer interfaces (BCIs) for both healthy individuals and persons with disabilities. To test the promise of this modality, we produced a brain-based authentication system using custom-fit EEG earpieces. In a sample of N=7 participants, we demonstrated that our system has high accuracy, higher than prior work using non-custom earpieces. We demonstrated that both inherence and knowledge factors contribute to authentication accuracy, and performed a simulated attack to show our system's robustness against impersonation. From an authentication standpoint, our system provides three factors of authentication in a single step. From a usability standpoint, our system does not require a cumbersome, head-worn device.
 
 \tiny
  \keyFont{ \section{Keywords:} passthoughts, authentication, in-ear EEG, ubiquitous EEG, brain-computer interface}
@@ -247,20 +238,32 @@ tasks, and finally a post-experiment questionnaire.
 Earpieces were produced by an audiologist at Starkey, a manufacturer of hearing
 aids. To produce custom ear impressions, subjects' ears were cleaned, a cotton
 ball with a string attached was placed inside the ear canal, and silicone was
-injected into the canals. When the silicone dried after a few minutes, the
+injected into the canals. Starkey ``Precise3S Classic'' two-part silicone
+impression material was used. When the silicone dried after a few minutes, the
 string was pulled to remove the impression from the ear canal. This impression
 was then scanned with a 3D scanner, and the resulting scan modified to achieve a
 comfortable fit and to ensure the intended electrode sites would make good
 contact with the skin. Channels were created in the 3D model to allow wire leads
 and associated EEG electrodes as well as a plastic tube to deliver audio. This
 3D model was then sent to a 3D printer after which wires, leads, and associated
-AgCl electrodes were installed. The positions of the earpiece electrodes were
-simplified from those described in (\cite{Mikkelsen2015}). We reduced the number
-of canal electrodes in order to prevent electrical bridging and positioned them
-approximately 180 degrees apart in the canal (posterior/back and anterior/front
-locations in the canal). One other electrode was placed in the concha. An
-example of one of the manufactured earpieces is shown in Figure
-\ref{fig:earpiece_diagram}.
+AgCl electrodes were installed. Cortech EC-DC-AGP1 electrodes were used for the
+canal electrodes, and Cortech EC-DC-AGE6 electrodes were used for the concha
+electrode. The positions of the earpiece electrodes were simplified from those
+described in (\cite{Mikkelsen2015}). We reduced the number of canal electrodes
+in order to prevent electrical bridging and positioned them approximately 180
+degrees apart in the canal (posterior/back and anterior/front locations in the
+canal). One other electrode was placed in the concha. An example of one of the
+manufactured earpieces is shown in Figure \ref{fig:earpiece_diagram}.
+
+
+The electrodes were purchased from Cortech:
+
+Canal electrodes: https://cortechsolutions.com/product/ec-dc-agp1/
+
+Concha electrode: https://cortechsolutions.com/product/ec-dc-age6/
+
+
+
 
 ** Mental tasks
 
@@ -494,7 +497,7 @@ combination).
 \begin{figure*}
 \centering
 \includegraphics[width=.9\linewidth]{./figures/mean-far-and-frr-by-electrode-config.png}
-\caption{Mean FAR and FRR by electrode configuration across all participants and tasks. All electrodes (Fp1, right, and left ear channels) combined achieved the best FAR score, followed by the right and left ear electrodes combined, respectively.}
+\caption{Mean FAR and FRR by electrode configuration across all participants and tasks. All electrodes (Fp1, right, and left ear channels) combined achieved the best FAR score by mean and standard error. The right ear electrodes combined, and left ear electrodes combined, achieved next-best accuracy, both within error of one another.}
 \label{fig:meanByElectrode}
 \end{figure*}
 
@@ -534,17 +537,17 @@ FAR and FRR for three out of seven participants.
 \caption{FAR performance of each task for each participant using data from the left ear.}
 \label{tab:farall}
 \begin{center}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr}
-\textbf{Task} & P1 & P2 & P3 & P4 & P5 & P6 & P7\\ \hline
-Breathe & 0 & 0 & 0 & 0 & 0.0002 & 0.0004 & 0\\
-Breathe - open & 0 & 0 & 0 & 0 & 0.0002 & 0 & 0\\
-Face & 0 & 0 & 0 & 0.0016 & 0.0030 & 0 & 0.0002\\
-Listen & 0.0002 & 0 & 0.0002 & 0 & 0.0026 & 0 & 0\\
-Sequence & 0 & 0.0002 & 0 & 0.0008 & 0.0014 & 0 & 0.0002\\
-Song & 0 & 0.0001 & 0 & 0 & 0 & 0.0001 & 0\\
-Song - open & 0 & 0.0004 & 0 & 0 & 0 & 0 & 0\\
-Speech & 0 & 0 & 0.0006 & 0.0002 & 0.0002 & 0.0006 & 0\\
-Sport & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ \hline
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr|l}
+\textbf{Task} & P1 & P2 & P3 & P4 & P5 & P6 & P7 & \textbf{Mean} \\ \hline
+Breathe & 0 & 0 & 0 & 0 & 0.0002 & 0.0004 & 0 & 0.00009\\
+Breathe - open & 0 & 0 & 0 & 0 & 0.0002 & 0 & 0 & 0.00003\\
+Face & 0 & 0 & 0 & 0.0016 & 0.0030 & 0 & 0.0002 & 0.00078\\
+Listen & 0.0002 & 0 & 0.0002 & 0 & 0.0026 & 0 & 0 & 0.00043 \\
+Sequence & 0 & 0.0002 & 0 & 0.0008 & 0.0014 & 0 & 0.0002 & 0.00037\\
+Song & 0 & 0.0001 & 0 & 0 & 0 & 0.0001 & 0 & 0.00003\\
+Song - open & 0 & 0.0004 & 0 & 0 & 0 & 0 & 0 & 0.00006\\
+Speech & 0 & 0 & 0.0006 & 0.0002 & 0.0002 & 0.0006 & 0 & 0.00022\\
+Sport & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
 \end{tabular*}
 \end{center}
 \end{table*}
@@ -553,17 +556,17 @@ Sport & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ \hline
 \caption{FRR performance of each task for each participant using data from the left ear.}
 \label{tab:frrall}
 \begin{center}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr}
-\textbf{Task} & P1 & P2 & P3 & P4 & P5 & P6 & P7\\ \hline
-Breathe & 0 & 0.0125 & 0 & 0.0125 & 0.0125 & 0.0250 & 0\\
-Breathe - open & 0.0500 & 0.0125 & 0.0375 & 0.1000 & 0.0375 & 0 & 0\\
-Face & 0.0125 & 0.0125 & 0 & 0.1125 & 0.4000 & 0 & 0.0375\\
-Listen & 0.0750 & 0.0375 & 0.0375 & 0.0500 & 0.3375 & 0.0125 & 0\\
-Sequence & 0.0125 & 0 & 0 & 0.0375 & 0.4000 & 0.0375 & 0\\
-Song & 0.0375 & 0.0125 & 0 & 0.0375 & 0.0500 & 0 & 0\\
-Song - open & 0.0250 & 0.0250 & 0.0500 & 0.0125 & 0 & 0 & 0\\
-Speech & 0 & 0.0125 & 0.0625 & 0 & 0.3375 & 0 & 0.0125\\
-Sport & 0.0250 & 0.0250 & 0 & 0.0125 & 0.0375 & 0.0125 & 0.0125\\ \hline
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l|rrrrrrr|l}
+\textbf{Task} & P1 & P2 & P3 & P4 & P5 & P6 & P7 & \textbf{Mean} \\ \hline
+Breathe & 0 & 0.0125 & 0 & 0.0125 & 0.0125 & 0.0250 & 0 & 0.00893\\
+Breathe - open & 0.0500 & 0.0125 & 0.0375 & 0.1000 & 0.0375 & 0 & 0 & 0.03393\\
+Face & 0.0125 & 0.0125 & 0 & 0.1125 & 0.4000 & 0 & 0.0375 & 0.08214\\
+Listen & 0.0750 & 0.0375 & 0.0375 & 0.0500 & 0.3375 & 0.0125 & 0 & 0.07857\\
+Sequence & 0.0125 & 0 & 0 & 0.0375 & 0.4000 & 0.0375 & 0 & 0.06964\\
+Song & 0.0375 & 0.0125 & 0 & 0.0375 & 0.0500 & 0 & 0 & 0.01964\\
+Song - open & 0.0250 & 0.0250 & 0.0500 & 0.0125 & 0 & 0 & 0 & 0.01607\\
+Speech & 0 & 0.0125 & 0.0625 & 0 & 0.3375 & 0 & 0.0125 & 0.06071\\
+Sport & 0.0250 & 0.0250 & 0 & 0.0125 & 0.0375 & 0.0125 & 0.0125 & 0.01786\\ \hline
 \end{tabular*}
 \end{center}
 \end{table*}
@@ -609,6 +612,15 @@ Our ``leave one out'' analysis with participants' best tasks maintained 0\% FAR
 across all participant combinations.
 
 #+END_EXPORT
+
+As an additional validity check, we replicated our results using data from the
+left ear only, high-passing the original frequency-domain data at 32Hz to select
+only data associated with non-cortical signals such as muscular activity. Our
+classifier performed roughly at chance. This analysis strongly suggests that EMG
+signals did not significantly contribute to our results. Future work may assess
+the relative contribution of different EEG frequency bands, as we discuss
+further in our discussion.
+
 ** Relative contributions of authentication factors
 
 #+BEGIN_EXPORT latex
@@ -894,6 +906,13 @@ with disabilities which may prevent them from performing other authentication
 methods, e.g. those that require the use of one's hands, voice, or particular
 bodily movement patterns.
 
+Our work aimed primarily to evaluate our authentication system's security
+characteristics. As such, we have not investigated which EEG frequency bands
+drive the authentication results. Future work could re-analyze our data to
+better understand which frequency bands are most contributing to our
+authenticator's results. This work would deepen our neuroscientific
+understanding of how the authentication system achieves the results we observe.
+
 # An important question surrounds how passthoughts might be cracked. Generally, we
 # do not understand how an individual's passthought is drawn from the distribution
 # of EEG signals an individual produces throughout the day. Given a large enough
@@ -1000,7 +1019,10 @@ persons with disabilities.
 
 * Acknowledgements
 
-Withheld for blind review.
+This work was supported in part by the Berkeley Center for Long Term
+Cybersecurity (CLTC), and the Hewlett Foundation. Any opinions, findings, and
+conclusions or recommendations expressed in this material are those of the
+authors.
 
 \bibliographystyle{ext/frontiersinSCNS_ENG_HUMS} 
 \bibliography{references}
